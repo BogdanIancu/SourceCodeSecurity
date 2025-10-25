@@ -27,6 +27,13 @@ int main()
 {
     x_modifier modifier;
     modifier.aa.x = 70;
-    cout << modifier.a.x;
+    cout << modifier.a.x << endl;
+
+    int a = 50;
+    const int* const pointer = &a;
+    int* another_pointer = (int*)pointer;
+    *another_pointer = 70;
+    cout << *pointer << endl;
+
     getchar();
 }

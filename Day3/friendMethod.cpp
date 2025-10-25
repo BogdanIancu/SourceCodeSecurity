@@ -14,17 +14,23 @@ class B
     private:
         bool some_boolean = false;
         int y = 10;
+
+public:
+    int operator+(A&a)
+    {
+        return this->y + a.x;
+    }
+
+    bool get_some_boolean()
+    {
+        return some_boolean;
+    }
+    
     //the + operator which adds As and Bs
     //should be declared either in A
     //either as a friend method
     //if A's code cannot be modified
-    friend int operator+ (A& a, B& b);
-
-    public:
-        bool get_some_boolean()
-        {
-            return some_boolean;
-        }
+    friend int operator+(A& a, B& b);
 };
 
 //passing by reference is common in C++
@@ -42,5 +48,6 @@ int main()
     cout << "intial value: " <<  b.get_some_boolean() << endl;
     cout << a + b << endl;
     cout << "modified value: " <<  b.get_some_boolean() << endl;
+    getchar();
 }
 
