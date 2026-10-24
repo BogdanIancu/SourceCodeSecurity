@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-//A is part of a libaray
+//A is part of a library
 //and its code cannot be changed
 class A
 {
